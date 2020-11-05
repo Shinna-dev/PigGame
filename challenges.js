@@ -69,14 +69,9 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
 		// update UI
 		document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 
-		var input = document.querySelector('.final-value').value;
-		var winningScore;
+		const input = document.querySelector('.final-value').value;
+		const winningScore = input ? input : 100;
 
-		if (input) {
-			winningScore = input;
-		} else {
-			winningScore = 100;
-		}
 		//check if the player won the game
 		if (scores[activePlayer] >= winningScore) {
 			document.querySelector('#name-' + activePlayer).textContent = 'WINNER!';
